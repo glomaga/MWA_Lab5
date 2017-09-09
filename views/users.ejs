@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>USERS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div class="container">
+    <table class="table table-bordered">
+        <thead >
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>Zip Code</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Website</th>
+            </tr>
+          </thead>
+          <tbody>
+    <% users.forEach(function(user){ %>
+      <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.address.city %></td>
+          <td><%= user.address.zipcode %></td>
+          <td><%= user.address.geo.lat %></td>
+          <td><%= user.address.geo.lng %></td>
+          <td><%= user.website %></td>
+        </tr>
+    <% }); %>
+  </tbody>
+  </table>
+  
+</div>   
+  </body>
+</html>
